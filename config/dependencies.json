@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        {
+            "interfaces": "ride\\library\\mail\\template\\MailTemplateProvider",
+            "class": "ride\\application\\mail\\template\\OrmMailTemplateProvider",
+            "id": "orm"
+        }
+    ]
+}
