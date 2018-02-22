@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<models>
+    <model name="MailTemplate" entryClass="ride\application\orm\mail\entry\MailTemplateEntry">
+        <field name="mailType" type="serialize">
+            <option name="label.name" value="label.mail.type"/>
+            <option name="code.type" value="ride\library\mail\type\MailType" />
+            <option name="code.nullable" value="1" />
+            <validator name="required"/>
+        </field>
+        <field name="mailTypeName" type="string">
+        </field>
+        <field name="name" type="string">
+            <option name="label.name" value="label.mail.name"/>
+            <validator name="required"/>
+        </field>
+        <field name="subject" type="string" localized="true">
+            <option name="label.name" value="label.subject"/>
+            <validator name="required"/>
+        </field>
+        <field name="body" type="wysiwyg" localized="true">
+            <option name="label.name" value="label.body"/>
+            <validator name="required"/>
+        </field>
+        <field name="attachments" type="serialize" localized="true">
+            <option name="label.name" value="label.attachments"/>
+        </field>
+        <field name="senderName" type="string" localized="true">
+            <option name="label.name" value="label.sender.name"/>
+        </field>
+        <field name="senderEmail" type="email" localized="true">
+            <option name="label.name" value="label.sender.email"/>
+        </field>
+        <field name="recipients" type="serialize">
+            <option name="label.name" value="label.recipients"/>
+            <option name="scaffold.form.type" value="select"/>
+        </field>
+        <field name="cc" type="serialize" localized="true">
+            <option name="label.name" value="label.cc"/>
+            <option name="code.type" value="array" />
+            <option name="code.nullable" value="1" />
+        </field>
+        <field name="bcc" type="serialize" localized="true">
+            <option name="label.name" value="label.bcc"/>
+            <option name="code.type" value="array" />
+            <option name="code.nullable" value="1" />
+        </field>
+    </model>
+</models>
