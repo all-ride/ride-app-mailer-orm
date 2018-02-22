@@ -49,10 +49,12 @@ class OrmMailTemplateProvider implements MailTemplateProvider {
             $findOptions['limit'] = $options['limit'];
         }
 
-        if (isset($options['offset'])) {
+        if (isset($options['offset']) && $options['offset']) {
             $page = floor($findOptions['limit'] / $options['offset']);
 
             $findOptions['page'] = $page;
+        } else {
+            $findOptions['page'] = 1;
         }
 
         return $this->model->find($findOptions, $locale, true);
