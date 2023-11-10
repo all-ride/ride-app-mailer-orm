@@ -32,10 +32,10 @@ class OrmMailTemplateProvider implements MailTemplateProvider {
      * @see \ride\library\mail\template\MailTemplate
      */
     public function getMailTemplates(array $options) {
+
         $findOptions = array(
             'limit' => 10,
         );
-
         $locale = null;
         if (isset($options['locale'])) {
             $locale = $options['locale'];
@@ -49,8 +49,8 @@ class OrmMailTemplateProvider implements MailTemplateProvider {
             $findOptions['limit'] = $options['limit'];
         }
 
-        if (isset($options['offset']) && $options['offset']) {
-            $page = floor($findOptions['limit'] / $options['offset']);
+        if (isset($options['page']) && $options['page']) {
+            $page = $options['page'];
 
             $findOptions['page'] = $page;
         } else {
