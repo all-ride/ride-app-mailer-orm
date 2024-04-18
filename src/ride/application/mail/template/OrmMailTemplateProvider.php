@@ -12,6 +12,8 @@ use ride\library\orm\OrmManager;
  * Interface for the provider of the mail templates
  */
 class OrmMailTemplateProvider implements MailTemplateProvider {
+    protected $ormManager;
+    public $model;
 
     /**
      * Constructs a new ORM mail template provider
